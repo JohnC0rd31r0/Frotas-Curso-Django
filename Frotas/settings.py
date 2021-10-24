@@ -28,9 +28,14 @@ SECRET_KEY = 'django-insecure-wa=t+ai=b#z1e(8#a=g&u*bfpkc38imvc##)1y$0yp-c81e20m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['0.0.0.0'
                  'frotasdjango.herokuapp.com',
                  '127.0.0.1', "localhost"]
+=======
+ALLOWED_HOSTS = [
+    'frotasdjango.herokuapp.com']
+>>>>>>> f9f219f4ad35d7a59d0e4df43489671a0d76797c
 
 
 # Application definition
