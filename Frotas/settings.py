@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-wa=t+ai=b#z1e(8#a=g&u*bfpkc38imvc##)1y$0yp-c81e20m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0'
+ALLOWED_HOSTS = ['0.0.0.0',
                  'frotasdjango.herokuapp.com',
                  '127.0.0.1', "localhost"]
 
