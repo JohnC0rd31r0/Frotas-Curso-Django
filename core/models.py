@@ -43,7 +43,7 @@ class Acompanhamento(models.Model):
     class StatusFrota(models.IntegerChoices):
         SAIDA = 1, "Saída da Portaria"
         ONROAD = 2, "A caminho"
-        ENTREGUE = 3, "Entregue na portaria"
+        ENTREGUE = 3, "Entregue no endereço de destino"
         RETORNO = 4, "Viagem de retorno Iniciada"
         CEDE = 5, "Se encontra na cede"
 
@@ -51,6 +51,8 @@ class Acompanhamento(models.Model):
         Veiculo, on_delete=models.PROTECT, related_name="acompanhamento")
     status = models.IntegerField(
         choices=StatusFrota.choices, default=StatusFrota.CEDE)
+    item = models.CharField(max_length=255)
+    quantidade = models.IntegerField()
 
 
 class ItensEntrega(models.Model):
@@ -59,3 +61,6 @@ class ItensEntrega(models.Model):
     veiculo = models.ForeignKey(
         Veiculo, on_delete=models.PROTECT, related_name="+")
     quantidade = models.IntegerField()
+
+    def __str__(self):
+        return self.item
