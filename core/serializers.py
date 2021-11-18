@@ -1,6 +1,6 @@
 from django.db.models import fields
 from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
-from core.models import Categoria, Motorista, Montadora, Veiculo, Acompanhamento, ItensEntrega
+from core.models import Categoria, Motorista, Montadora, Veiculo, Acompanhamento
 
 
 class CategoriaSerializer(ModelSerializer):
@@ -50,7 +50,7 @@ class AcompanhamentoSerializer(ModelSerializer):
 
     class Meta:
         model = Acompanhamento
-        fields = ("item", "quantidade", "veiculo", "status")
+        fields = ("id", "item", "quantidade", "veiculo", "status")
 
     def get_status(self, instance):
         return instance.get_status_display()

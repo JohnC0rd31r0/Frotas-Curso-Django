@@ -53,14 +53,3 @@ class Acompanhamento(models.Model):
         choices=StatusFrota.choices, default=StatusFrota.CEDE)
     item = models.CharField(max_length=255)
     quantidade = models.IntegerField()
-
-
-class ItensEntrega(models.Model):
-    acompanhamento = models.ForeignKey(
-        Acompanhamento, on_delete=models.CASCADE, related_name="itens")
-    veiculo = models.ForeignKey(
-        Veiculo, on_delete=models.PROTECT, related_name="+")
-    quantidade = models.IntegerField()
-
-    def __str__(self):
-        return self.item
